@@ -1,0 +1,2976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Blessings Chuulu">
+    <meta name="keywords"
+        content="Blessings Chuulu, Computer Networks Engineer, Full Stack Developer, Network Security, Web Development, Zambia, University of Zambia">
+    <meta name="description"
+        content="Blessings Chuulu - Computer Networks Engineer & Full Stack Developer from Kabwe, Zambia. Recent graduate from University of Zambia specializing in Computer Networks Engineering.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blessings Chuulu - Computer Networks Engineer">
+    <meta property="og:description"
+        content="Passionate Computer Networks Engineer & Full Stack Developer from Kabwe, Zambia. Recent graduate from University of Zambia specializing in Computer Networks Engineering.">
+    <meta property="og:image" content="https://picsum.photos/seed/blessings-og/1200x630.jpg">
+    <meta property="og:url" content="https://blessingschuulu.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Blessings Chuulu Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blessings Chuulu - Computer Networks Engineer">
+    <meta name="twitter:description"
+        content="Passionate Computer Networks Engineer & Full Stack Developer from Kabwe, Zambia. Recent graduate from University of Zambia specializing in Computer Networks Engineering.">
+    <meta name="twitter:image" content="https://picsum.photos/seed/blessings-twitter/1200x630.jpg">
+    <meta name="twitter:site" content="@blessingschuulu">
+    <meta name="twitter:creator" content="@blessingschuulu">
+
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://picsum.photos/seed/favicon/180x180.jpg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="https://picsum.photos/seed/favicon/32x32.jpg">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="https://picsum.photos/seed/favicon/16x16.jpg">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="https://picsum.photos/seed/safari-pinned-tab/16x16.jpg" color="#4a6bff">
+    <meta name="msapplication-TileColor" content="#4a6bff">
+    <meta name="theme-color" content="#4a6bff">
+
+    <!-- Preconnect to External Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="//picsum.photos">
+    <link rel="dns-prefetch" href="//api.qrserver.com">
+    <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="dns-prefetch" href="//maps.google.com">
+
+    <!-- Security Meta Tags - UPDATED WITH FIXED CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; 
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; 
+        img-src 'self' data: https:; 
+        font-src 'self' https://cdnjs.cloudflare.com; 
+        connect-src 'self' https://api.qrserver.com; 
+        frame-src 'self' https://www.google.com https://maps.google.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <!-- Performance Meta Tags -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://picsum.photos/seed/blessings1/400/400.jpg" as="image">
+
+    <title>Blessings Chuulu - Computer Networks Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff6b6b;
+            --accent-color: #ffd93d;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --card-bg: #f9f9f9;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --blessings-favorite: #6a5acd;
+            /* Blessings' favorite color - purple */
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #6b8cff;
+            --secondary-color: #ff8787;
+            --accent-color: #ffe66d;
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --blessings-favorite: #7b68ee;
+            /* Lighter purple for dark mode */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(74, 107, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s ease;
+        }
+
+        /* Skip to Content Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Language Notification */
+        .lang-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .lang-notification.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(18, 18, 18, 0.9);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            width: 150px;
+            transition: var(--transition);
+        }
+
+        .search-container input:focus {
+            width: 200px;
+            border-color: var(--primary-color);
+        }
+
+        .search-container button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-container button:hover {
+            background: var(--secondary-color);
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .language-selector select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .theme-toggle,
+        .accessibility-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover,
+        .accessibility-btn:hover {
+            color: var(--primary-color);
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        #typingText {
+            border-right: 3px solid var(--primary-color);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                border-color: var(--primary-color);
+            }
+
+            51%,
+            100% {
+                border-color: transparent;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(74, 107, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            object-fit: cover;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item i {
+            color: var(--primary-color);
+        }
+
+        /* Map Container */
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 300px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Timeline Section - Fixed Text Formatting */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            justify-content: flex-end;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            justify-content: flex-start;
+            padding-left: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 4px solid var(--bg-color);
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(74, 107, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -12px;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 1.8rem 2.2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .timeline-content:hover::before {
+            transform: translateX(100%);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .timeline-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin: 0;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateY(-50%) scale(1.2);
+            box-shadow: 0 0 0 4px var(--bg-color), 0 0 20px rgba(74, 107, 255, 0.5);
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced Timeline Styles with Blue Colors - Fixed Text */
+        .timeline-content[style*="background"] {
+            color: white !important;
+            border: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .timeline-content[style*="background"] h3 {
+            color: white !important;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .timeline-content[style*="background"] p {
+            color: rgba(255, 255, 255, 0.95) !important;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Specific styles for lighter blue backgrounds - Fixed Text */
+        .timeline-content[style*="#60a5fa"],
+        .timeline-content[style*="#93c5fd"] {
+            color: #1e3a8a !important;
+            text-align: left;
+        }
+
+        .timeline-content[style*="#60a5fa"] h3,
+        .timeline-content[style*="#93c5fd"] h3 {
+            color: #1e3a8a !important;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .timeline-content[style*="#60a5fa"] p,
+        .timeline-content[style*="#93c5fd"] p {
+            color: #1e3a8a !important;
+            opacity: 0.9;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Enhanced hover effects for colored timeline items */
+        .timeline-content[style*="background"]:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Timeline dot enhancements */
+        .timeline-dot[style*="background"] {
+            box-shadow: 0 0 0 4px var(--bg-color), 0 0 0 6px currentColor;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot[style*="background"] {
+            transform: translateY(-50%) scale(1.3);
+            box-shadow: 0 0 0 4px var(--bg-color), 0 0 0 8px currentColor, 0 0 20px currentColor;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            transition: width 1s ease;
+            width: 0;
+            will-change: width;
+        }
+
+        .heart-icon {
+            color: var(--secondary-color);
+        }
+
+        /* Projects Section */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Blog Section */
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .blog-excerpt {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .testimonial-author:hover img {
+            transform: scale(1.1);
+        }
+
+        .author-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Certifications Section */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .cert-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Hobbies Section */
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .hobby-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px) rotate(5deg);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .qr-code {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .qr-code img {
+            border: 1px solid var(--text-color);
+            padding: 0.5rem;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .qr-code p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .newsletter {
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .newsletter form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--text-color);
+            border-radius: 5px 0 0 5px;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .newsletter button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter button:hover {
+            background: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Accessibility Styles */
+        .high-contrast {
+            --primary-color: #0000ff;
+            --secondary-color: #ff0000;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --card-bg: #ffffff;
+        }
+
+        .high-contrast [data-theme="dark"] {
+            --primary-color: #00aaff;
+            --secondary-color: #ff5555;
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --card-bg: #000000;
+        }
+
+        .large-text {
+            font-size: 120%;
+        }
+
+        .large-text .section-title {
+            font-size: 3rem;
+        }
+
+        .large-text .hero-text h1 {
+            font-size: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-controls {
+                gap: 0.5rem;
+            }
+
+            .search-container input {
+                width: 100px;
+            }
+
+            .search-container input:focus {
+                width: 120px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+
+            /* Responsive adjustments for timeline - Fixed Text */
+            .timeline-container::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 60px !important;
+                padding-right: 20px !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+            
+            .timeline-dot {
+                left: 18px !important;
+            }
+            
+            .timeline-content {
+                max-width: 100%;
+                padding: 1.5rem 1.8rem;
+                text-align: left !important;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 0.6rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            /* Fix mobile text alignment for colored items */
+            .timeline-content[style*="background"] {
+                text-align: left !important;
+            }
+            
+            .timeline-content[style*="#60a5fa"],
+            .timeline-content[style*="#93c5fd"] {
+                text-align: left !important;
+            }
+
+            .newsletter form {
+                flex-direction: column;
+            }
+
+            .newsletter input {
+                border-radius: 5px;
+            }
+
+            .newsletter button {
+                border-radius: 5px;
+            }
+        }
+
+        /* 3D Animation Canvas */
+        #canvas3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Language Loading Animation */
+        .lang-loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Language Change Notification -->
+    <div class="lang-notification" id="langNotification"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">BC</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#timeline" data-i18n="nav.journey">Journey</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+                <li><a href="#hobbies" data-i18n="nav.hobbies">Hobbies</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search..."
+                        data-i18n-placeholder="search.placeholder" aria-label="Search">
+                    <button id="searchBtn" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="language-selector">
+                    <select id="languageSelect" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="accessibility-btn" id="accessibilityToggle" aria-label="Accessibility options"
+                    title="Accessibility options">
+                    <i class="fas fa-universal-access"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3D Animation Background -->
+    <canvas id="canvas3d"></canvas>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Blessings Chuulu</h1>
+                    <p><span id="typingText"></span></p>
+                    <p data-i18n="hero.subtitle">Passionate about creating secure and efficient network solutions</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero.contact">Get In Touch</a>
+                        <a href="#projects" class="btn btn-outline" data-i18n="hero.projects">View Projects</a>
+                        <a href="#" class="btn btn-outline" id="downloadResume">
+                            <i class="fas fa-download"></i> <span data-i18n="hero.resume">Download Resume</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.postimg.cc/v8vRDjcr/pic1.jpg" alt="Blessings Chuulu">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://i.postimg.cc/mZSxhqtX/pic2.jpg" alt="Blessings Chuulu">
+                </div>
+                <div class="about-text">
+                    <p>I am Blessings Chuulu, a highly skilled and certified technology professional with a Bachelor's
+                        degree in Computer Science from the University of Zambia, specializing in Computer Networks
+                        Engineering. My expertise is validated by industry-recognized certifications from Cisco, AWS,
+                        and Google Cloud, forming a robust foundation in both on-premise and cloud infrastructure.
+                        Hardworking, determined and self motivated. Love listening to music and reading.</p>
+                    <p>My theoretical knowledge was solidified during a hands-on internship at Zambia Railways Limited,
+                        where I managed critical IT infrastructure—gaining practical experience in network installation,
+                        Wi-Fi configuration, hardware repair, and software troubleshooting. This immersive journey
+                        provided a real-world context for my certified skills in networking and cloud platforms.</p>
+                    <p>Beyond networking, I am a versatile full-stack developer and a creative graphic designer,
+                        enabling me to not only build and maintain robust systems but also create intuitive user
+                        interfaces and engaging visual experiences. This unique combination of skills allows me to
+                        approach projects with a holistic perspective, from the backend architecture and network
+                        security to the frontend design and user interaction.</p>
+                    <p>Guided by strong personal values and a leadership mindset honed as a first-born, I am passionate
+                        about leveraging this diverse technical toolkit to solve complex problems and deliver
+                        integrated, impactful solutions.</p>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span data-i18n="about.education">University of Zambia, 2025</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="about.location">Kabwe, New NKRUMAH, Zambia</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span data-i18n="about.profession">Computer Networks Engineer</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span>Internship: Zambia Railways Limited</span>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.7346364248343!2d28.449711614507734!3d-14.446538989826698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1933b6b5b5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sNew%20Nkrumah%2C%20Kabwe%2C%20Zambia!5e0!3m2!1sen!2sus!4v1625087234567!5m2!1sen!2sus"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline">
+            <h2 class="section-title" data-i18n="timeline.title">My Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #1e3a8a; border-color: #1e3a8a;"></div>
+                    <div class="timeline-content" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 15px;">
+                        <h3>2025</h3>
+                        <p data-i18n="timeline.item1">Graduated from University of Zambia with a degree in Computer Science</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #2563eb; border-color: #2563eb;"></div>
+                    <div class="timeline-content" style="background: linear-gradient(135deg, #2563eb, #60a5fa); border-radius: 15px;">
+                        <h3>2024</h3>
+                        <p data-i18n="timeline.item2">Completed Cisco CCNA and Google Cloud certifications</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #3b82f6; border-color: #3b82f6;"></div>
+                    <div class="timeline-content" style="background: linear-gradient(135deg, #3b82f6, #93c5fd); border-radius: 15px;">
+                        <h3>2023</h3>
+                        <p data-i18n="timeline.item3">Internship at Zambia Railways Limited managing critical IT infrastructure</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #60a5fa; border-color: #60a5fa;"></div>
+                    <div class="timeline-content" style="background: linear-gradient(135deg, #60a5fa, #bfdbfe); border-radius: 15px;">
+                        <h3>2022</h3>
+                        <p data-i18n="timeline.item4">Started specializing in Computer Networks Engineering</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #93c5fd; border-color: #93c5fd;"></div>
+                    <div class="timeline-content" style="background: linear-gradient(135deg, #93c5fd, #dbeafe); border-radius: 15px;">
+                        <h3>2021</h3>
+                        <p data-i18n="timeline.item5">Began Computer Science degree at University of Zambia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title" data-i18n="skills.title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-java"></i></div>
+                    <div class="skill-name">Java</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <div class="skill-name">React</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-name">MySQL</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="skill-name" data-i18n="skills.networking">Network Engineering</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="88%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="skill-name" data-i18n="skills.cybersecurity">Cybersecurity</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="82%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">All</button>
+                <button class="filter-btn" data-filter="networking"
+                    data-i18n="projects.filter.networking">Networking</button>
+                <button class="filter-btn" data-filter="web" data-i18n="projects.filter.web">Web Development</button>
+                <button class="filter-btn" data-filter="security" data-i18n="projects.filter.security">Security</button>
+            </div>
+            <div class="projects-container">
+                <div class="project-card" data-category="security">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/RZ2ffgNy/Screenshot-150.png" alt="Exam Security System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.exam.title">Exam Security System</h3>
+                        <p class="project-description" data-i18n="projects.exam.description">A comprehensive examination
+                            security system designed to prevent cheating and ensure academic integrity. Features include
+                            biometric authentication, real-time monitoring, and encrypted question delivery.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Biometrics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> <span
+                                    data-i18n="projects.live">Live Demo</span></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                        <p><strong data-i18n="projects.exam.thesis">Final Year Thesis Project</strong></p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="networking">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/cluster-computing/400/200.jpg"
+                            alt="Cluster Computing System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.cluster.title">Cluster Computing System</h3>
+                        <p class="project-description" data-i18n="projects.cluster.description">Built a high-performance
+                            computing cluster using Raspberry Pi devices to demonstrate distributed computing principles
+                            and parallel processing capabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">MPI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> <span
+                                    data-i18n="projects.live">Live Demo</span></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                        <p><strong data-i18n="projects.cluster.research">Research Project</strong></p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="networking">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/network-monitoring/400/200.jpg"
+                            alt="Network Monitoring Tool">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.monitoring.title">Network Monitoring Tool</h3>
+                        <p class="project-description" data-i18n="projects.monitoring.description">Developed a real-time
+                            network monitoring application that tracks bandwidth usage, detects anomalies, and provides
+                            detailed analytics for network optimization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Grafana</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> <span
+                                    data-i18n="projects.live">Live Demo</span></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                        <p><strong data-i18n="projects.monitoring.course">Course Project</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2 class="section-title" data-i18n="blog.title">Blog & Articles</h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/seed/blog1/400/250.jpg" alt="Blog post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 15, 2025</span>
+                            <span class="blog-category" data-i18n="blog.category1">Network Security</span>
+                        </div>
+                        <h3 class="blog-title" data-i18n="blog.post1.title">Securing Network Infrastructure in
+                            Educational Institutions</h3>
+                        <p class="blog-excerpt" data-i18n="blog.post1.excerpt">Exploring best practices for implementing
+                            robust security measures in university networks to protect sensitive data and ensure
+                            academic integrity...</p>
+                        <a href="#" class="read-more" data-i18n="blog.readmore">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/seed/blog2/400/250.jpg" alt="Blog post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">April 28, 2025</span>
+                            <span class="blog-category" data-i18n="blog.category2">Cloud Computing</span>
+                        </div>
+                        <h3 class="blog-title" data-i18n="blog.post2.title">Building Scalable Networks with Cloud
+                            Technologies</h3>
+                        <p class="blog-excerpt" data-i18n="blog.post2.excerpt">A comprehensive guide to designing and
+                            implementing cloud-based network solutions that can scale with your organization's growth...
+                        </p>
+                        <a href="#" class="read-more" data-i18n="blog.readmore">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/seed/blog3/400/250.jpg" alt="Blog post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 10, 2025</span>
+                            <span class="blog-category" data-i18n="blog.category3">Career Development</span>
+                        </div>
+                        <h3 class="blog-title" data-i18n="blog.post3.title">From Student to Network Engineer: My Journey
+                        </h3>
+                        <p class="blog-excerpt" data-i18n="blog.post3.excerpt">Sharing my experience transitioning from
+                            university studies to professional network engineering, including challenges and lessons
+                            learned...</p>
+                        <a href="#" class="read-more" data-i18n="blog.readmore">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2 class="section-title" data-i18n="testimonials.title">Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p data-i18n="testimonials.quote1">"Blessings' exam security system was innovative and
+                            technically impressive. Her attention to detail and problem-solving skills are exceptional.
+                            She has a bright future in network engineering."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/prof1/60/60.jpg" alt="Professor">
+                        <div class="author-info">
+                            <h4>Dr. John Mwansa</h4>
+                            <p data-i18n="testimonials.prof1">Professor, University of Zambia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p data-i18n="testimonials.quote2">"Working with Blessings on the cluster computing project was
+                            a pleasure. She brings creativity and technical expertise to every challenge. Her dedication
+                            to excellence is inspiring."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/colleague1/60/60.jpg" alt="Colleague">
+                        <div class="author-info">
+                            <h4>Sarah Tembo</h4>
+                            <p data-i18n="testimonials.colleague1">Project Partner, UNZA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p data-i18n="testimonials.quote3">"Blessings demonstrated outstanding leadership during our
+                            network security workshops. Her ability to explain complex concepts simply and her passion
+                            for the subject made her an excellent mentor."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/mentor1/60/60.jpg" alt="Mentor">
+                        <div class="author-info">
+                            <h4>Michael Banda</h4>
+                            <p data-i18n="testimonials.mentor1">Cisco Instructor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-title" data-i18n="certifications.title">Certifications & Achievements</h2>
+            <div class="certifications-container">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3>Cisco CCNA</h3>
+                        <p data-i18n="certifications.cisco">Cisco Networking Academy</p>
+                        <p data-i18n="certifications.completed">Completed: 2024</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3 data-i18n="certifications.google.title">Google Cloud Associate Engineer</h3>
+                        <p data-i18n="certifications.google.provider">Google Cloud Platform</p>
+                        <p data-i18n="certifications.completed">Completed: 2024</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3 data-i18n="certifications.cyber.title">Cisco Cybersecurity Essentials</h3>
+                        <p data-i18n="certifications.cisco">Cisco Networking Academy</p>
+                        <p data-i18n="certifications.completed2023">Completed: 2023</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3 data-i18n="certifications.it.title">Google IT Support Professional</h3>
+                        <p data-i18n="certifications.it.provider">Google Career Certificates</p>
+                        <p data-i18n="certifications.completed2023">Completed: 2023</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3 data-i18n="certifications.python.title">Python for Data Science</h3>
+                        <p data-i18n="certifications.cisco">Cisco Networking Academy</p>
+                        <p data-i18n="certifications.completed2023">Completed: 2023</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="cert-info">
+                        <h3 data-i18n="certifications.best.title">Best Final Year Project</h3>
+                        <p data-i18n="certifications.best.provider">University of Zambia</p>
+                        <p data-i18n="certifications.awarded">Awarded: 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies">
+            <h2 class="section-title" data-i18n="hobbies.title">Hobbies & Interests</h2>
+            <div class="hobbies-container">
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-music"></i></div>
+                    <h3 data-i18n="hobbies.music.title">Gospel Music</h3>
+                    <p data-i18n="hobbies.music.desc">Finding inspiration and peace through uplifting gospel melodies
+                    </p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-users"></i></div>
+                    <h3 data-i18n="hobbies.friends.title">Making Friends</h3>
+                    <p data-i18n="hobbies.friends.desc">Building meaningful connections and fostering community</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-book"></i></div>
+                    <h3 data-i18n="hobbies.reading.title">Reading</h3>
+                    <p data-i18n="hobbies.reading.desc">Exploring new ideas and expanding knowledge</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-church"></i></div>
+                    <h3 data-i18n="hobbies.faith.title">Faith & Spirituality</h3>
+                    <p data-i18n="hobbies.faith.desc">Growing in faith and serving the community</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3 data-i18n="contact.email">Email</h3>
+                            <p>blessings.chuulu@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3 data-i18n="contact.phone">Phone</h3>
+                            <p>+260 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3 data-i18n="contact.location">Location</h3>
+                            <p data-i18n="contact.location.value">Kabwe, New NKRUMAH, Zambia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/blessingschuulu</p>
+                        </div>
+                    </div>
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:Blessings Chuulu%0ATEL:+260123456789%0AEMAIL:blessings.chuulu@example.com%0AEND:VCARD"
+                            alt="Contact QR Code">
+                        <p data-i18n="contact.qr">Scan to save contact</p>
+                    </div>
+                    <button id="shareVCard" class="btn btn-outline">
+                        <i class="fas fa-address-card"></i> <span data-i18n="contact.vcard">Share Business Card</span>
+                    </button>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="newsletter">
+            <h3 data-i18n="newsletter.title">Subscribe to my newsletter</h3>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Your email" data-i18n-placeholder="newsletter.placeholder" required>
+                <button type="submit" class="btn btn-primary" data-i18n="newsletter.subscribe">Subscribe</button>
+            </form>
+        </div>
+        <div class="social-links">
+            <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p data-i18n="footer.copyright">&copy; 2025 Blessings Chuulu. All rights reserved.</p>
+        <p data-i18n="footer.made">Made with <i class="fas fa-heart heart-icon"></i> and lots of coffee</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Translation System - Fixed with Missing Keys
+        const translations = {
+            en: {
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.journey": "Journey",
+                "nav.skills": "Skills",
+                "nav.projects": "Projects",
+                "nav.blog": "Blog",
+                "nav.testimonials": "Testimonials",
+                "nav.certifications": "Certifications",
+                "nav.hobbies": "Hobbies",
+                "nav.contact": "Contact",
+                "search.placeholder": "Search...",
+                "hero.subtitle": "Passionate about creating secure and efficient network solutions",
+                "hero.contact": "Get In Touch",
+                "hero.projects": "View Projects",
+                "hero.resume": "Download Resume",
+                "about.title": "About Me",
+                "about.education": "University of Zambia, 2025",
+                "about.location": "Kabwe, New NKRUMAH, Zambia",
+                "about.profession": "Computer Networks Engineer",
+                "about.family": "First Born Daughter",
+                "timeline.title": "My Journey",
+                "timeline.item1": "Graduated from University of Zambia with a degree in Computer Science",
+                "timeline.item2": "Completed Cisco CCNA and Google Cloud certifications",
+                "timeline.item3": "Internship at Zambia Railways Limited managing critical IT infrastructure",
+                "timeline.item4": "Started specializing in Computer Networks Engineering",
+                "timeline.item5": "Began Computer Science degree at University of Zambia",
+                "skills.title": "Technical Skills",
+                "skills.networking": "Network Engineering",
+                "skills.cybersecurity": "Cybersecurity",
+                "projects.title": "Featured Projects",
+                "projects.filter.all": "All",
+                "projects.filter.networking": "Networking",
+                "projects.filter.web": "Web Development",
+                "projects.filter.security": "Security",
+                "projects.live": "Live Demo",
+                "projects.exam.title": "Exam Security System",
+                "projects.exam.description": "A comprehensive examination security system designed to prevent cheating and ensure academic integrity. Features include biometric authentication, real-time monitoring, and encrypted question delivery.",
+                "projects.exam.thesis": "Final Year Thesis Project",
+                "projects.cluster.title": "Cluster Computing System",
+                "projects.cluster.description": "Built a high-performance computing cluster using Raspberry Pi devices to demonstrate distributed computing principles and parallel processing capabilities.",
+                "projects.cluster.research": "Research Project",
+                "projects.monitoring.title": "Network Monitoring Tool",
+                "projects.monitoring.description": "Developed a real-time network monitoring application that tracks bandwidth usage, detects anomalies, and provides detailed analytics for network optimization.",
+                "projects.monitoring.course": "Course Project",
+                "blog.title": "Blog & Articles",
+                "blog.category1": "Network Security",
+                "blog.category2": "Cloud Computing",
+                "blog.category3": "Career Development",
+                "blog.readmore": "Read More",
+                "blog.post1.title": "Securing Network Infrastructure in Educational Institutions",
+                "blog.post1.excerpt": "Exploring best practices for implementing robust security measures in university networks to protect sensitive data and ensure academic integrity...",
+                "blog.post2.title": "Building Scalable Networks with Cloud Technologies",
+                "blog.post2.excerpt": "A comprehensive guide to designing and implementing cloud-based network solutions that can scale with your organization's growth...",
+                "blog.post3.title": "From Student to Network Engineer: My Journey",
+                "blog.post3.excerpt": "Sharing my experience transitioning from university studies to professional network engineering, including challenges and lessons learned...",
+                "testimonials.title": "Testimonials",
+                "testimonials.quote1": "\"Blessings' exam security system was innovative and technically impressive. Her attention to detail and problem-solving skills are exceptional. She has a bright future in network engineering.\"",
+                "testimonials.prof1": "Professor, University of Zambia",
+                "testimonials.quote2": "\"Working with Blessings on the cluster computing project was a pleasure. She brings creativity and technical expertise to every challenge. Her dedication to excellence is inspiring.\"",
+                "testimonials.colleague1": "Project Partner, UNZA",
+                "testimonials.quote3": "\"Blessings demonstrated outstanding leadership during our network security workshops. Her ability to explain complex concepts simply and her passion for the subject made her an excellent mentor.\"",
+                "testimonials.mentor1": "Cisco Instructor",
+                "certifications.title": "Certifications & Achievements",
+                "certifications.cisco": "Cisco Networking Academy",
+                "certifications.completed": "Completed: 2024",
+                "certifications.completed2023": "Completed: 2023",
+                "certifications.google.title": "Google Cloud Associate Engineer",
+                "certifications.google.provider": "Google Cloud Platform",
+                "certifications.cyber.title": "Cisco Cybersecurity Essentials",
+                "certifications.it.title": "Google IT Support Professional",
+                "certifications.it.provider": "Google Career Certificates",
+                "certifications.python.title": "Python for Data Science",
+                "certifications.best.title": "Best Final Year Project",
+                "certifications.best.provider": "University of Zambia",
+                "certifications.awarded": "Awarded: 2025",
+                "hobbies.title": "Hobbies & Interests",
+                "hobbies.music.title": "Gospel Music",
+                "hobbies.music.desc": "Finding inspiration and peace through uplifting gospel melodies",
+                "hobbies.friends.title": "Making Friends",
+                "hobbies.friends.desc": "Building meaningful connections and fostering community",
+                "hobbies.reading.title": "Reading",
+                "hobbies.reading.desc": "Exploring new ideas and expanding knowledge",
+                "hobbies.faith.title": "Faith & Spirituality",
+                "hobbies.faith.desc": "Growing in faith and serving the community",
+                "contact.title": "Get In Touch",
+                "contact.email": "Email",
+                "contact.phone": "Phone",
+                "contact.location": "Location",
+                "contact.location.value": "Kabwe, New NKRUMAH, Zambia",
+                "contact.qr": "Scan to save contact",
+                "contact.vcard": "Share Business Card",
+                "contact.form.name": "Name",
+                "contact.form.email": "Email",
+                "contact.form.message": "Message",
+                "contact.form.send": "Send Message",
+                "contact.form.success": "Thank you for your message! I will get back to you soon.",
+                "newsletter.title": "Subscribe to my newsletter",
+                "newsletter.placeholder": "Your email",
+                "newsletter.subscribe": "Subscribe",
+                "newsletter.success": "Thank you for subscribing to my newsletter!",
+                "hero.resume.message": "Resume download would start here. Please link to an actual resume file.",
+                "footer.copyright": "&copy; 2025 Blessings Chuulu. All rights reserved.",
+                "footer.made": "Made with <i class=\"fas fa-heart heart-icon\"></i> and lots of coffee"
+            },
+            fr: {
+                "nav.home": "Accueil",
+                "nav.about": "À propos",
+                "nav.journey": "Parcours",
+                "nav.skills": "Compétences",
+                "nav.projects": "Projets",
+                "nav.blog": "Blog",
+                "nav.testimonials": "Témoignages",
+                "nav.certifications": "Certifications",
+                "nav.hobbies": "Passions",
+                "nav.contact": "Contact",
+                "search.placeholder": "Rechercher...",
+                "hero.subtitle": "Passionnée par la création de solutions réseau sécurisées et efficaces",
+                "hero.contact": "Contactez-moi",
+                "hero.projects": "Voir les projets",
+                "hero.resume": "Télécharger CV",
+                "about.title": "À propos de moi",
+                "about.education": "Université de Zambie, 2025",
+                "about.location": "Kabwe, New NKRUMAH, Zambie",
+                "about.profession": "Ingénieure Réseaux Informatiques",
+                "about.family": "Première Fille",
+                "timeline.title": "Mon Parcours",
+                "timeline.item1": "Diplômée de l'Université de Zambie avec un diplôme en informatique",
+                "timeline.item2": "Certifications Cisco CCNA et Google Cloud terminées",
+                "timeline.item3": "Stage à Zambia Railways Limited en gestion d'infrastructure IT critique",
+                "timeline.item4": "Spécialisation en ingénierie des réseaux informatiques",
+                "timeline.item5": "Début du diplôme en informatique à l'Université de Zambie",
+                "skills.title": "Compétences Techniques",
+                "skills.networking": "Ingénierie Réseau",
+                "skills.cybersecurity": "Cybersécurité",
+                "projects.title": "Projets Vedettes",
+                "projects.filter.all": "Tous",
+                "projects.filter.networking": "Réseaux",
+                "projects.filter.web": "Développement Web",
+                "projects.filter.security": "Sécurité",
+                "projects.live": "Démo Live",
+                "projects.exam.title": "Système de Sécurité d'Examen",
+                "projects.exam.description": "Un système de sécurité d'examen complet conçu pour prévenir la triche et garantir l'intégrité académique. Comprend l'authentification biométrique, la surveillance en temps réel et la livraison cryptée de questions.",
+                "projects.exam.thesis": "Projet de Thèse de Fin d'Année",
+                "projects.cluster.title": "Système de Calcul en Cluster",
+                "projects.cluster.description": "Construction d'un cluster de calcul haute performance utilisant des Raspberry Pi pour démontrer les principes de calcul distribué et les capacités de traitement parallèle.",
+                "projects.cluster.research": "Projet de Recherche",
+                "projects.monitoring.title": "Outil de Surveillance Réseau",
+                "projects.monitoring.description": "Développement d'une application de surveillance réseau en temps réel qui suit l'utilisation de la bande passante, détecte les anomalies et fournit des analyses détaillées pour l'optimisation réseau.",
+                "projects.monitoring.course": "Projet de Cours",
+                "blog.title": "Blog & Articles",
+                "blog.category1": "Sécurité Réseau",
+                "blog.category2": "Cloud Computing",
+                "blog.category3": "Développement de Carrière",
+                "blog.readmore": "Lire Plus",
+                "blog.post1.title": "Sécuriser l'Infrastructure Réseau dans les Institutions Éducatives",
+                "blog.post1.excerpt": "Exploration des meilleures pratiques pour mettre en œuvre des mesures de sécurité robustes dans les réseaux universitaires pour protéger les données sensibles et garantir l'intégrité académique...",
+                "blog.post2.title": "Construire des Réseaux Évolutifs avec les Technologies Cloud",
+                "blog.post2.excerpt": "Un guide complet pour concevoir et mettre en œuvre des solutions réseau basées sur le cloud qui peuvent évoluer avec la croissance de votre organisation...",
+                "blog.post3.title": "D'Étudiante à Ingénieure Réseau : Mon Parcours",
+                "blog.post3.excerpt": "Partage de mon expérience de transition des études universitaires à l'ingénierie réseau professionnelle, y compris les défis et les leçons apprises...",
+                "testimonials.title": "Témoignages",
+                "testimonials.quote1": "\"Le système de sécurité d'examen de Blessings était innovant et techniquement impressionnant. Son attention aux détails et ses compétences en résolution de problèmes sont exceptionnelles. Elle a un brillant avenir en ingénierie réseau.\"",
+                "testimonials.prof1": "Professeur, Université de Zambie",
+                "testimonials.quote2": "\"Travailler avec Blessings sur le projet de calcul en cluster était un plaisir. Elle apporte créativité et expertise technique à chaque défi. Son dévouement à l'excellence est inspirant.\"",
+                "testimonials.colleague1": "Partenaire de Projet, UNZA",
+                "testimonials.quote3": "\"Blessings a démontré un leadership exceptionnel lors de nos ateliers de sécurité réseau. Sa capacité à expliquer des concepts complexes simplement et sa passion pour le sujet en ont fait une excellente mentor.\"",
+                "testimonials.mentor1": "Instructeur Cisco",
+                "certifications.title": "Certifications & Réalisations",
+                "certifications.cisco": "Cisco Networking Academy",
+                "certifications.completed": "Terminé : 2024",
+                "certifications.completed2023": "Terminé : 2023",
+                "certifications.google.title": "Ingénieur Associé Google Cloud",
+                "certifications.google.provider": "Google Cloud Platform",
+                "certifications.cyber.title": "Essentiels de Cybersécurité Cisco",
+                "certifications.it.title": "Support IT Professionnel Google",
+                "certifications.it.provider": "Google Career Certificates",
+                "certifications.python.title": "Python pour la Science des Données",
+                "certifications.best.title": "Meilleur Projet de Fin d'Année",
+                "certifications.best.provider": "Université de Zambie",
+                "certifications.awarded": "Attribué : 2025",
+                "hobbies.title": "Passions & Intérêts",
+                "hobbies.music.title": "Musique Gospel",
+                "hobbies.music.desc": "Trouver l'inspiration et la paix à travers des mélodies gospel édifiantes",
+                "hobbies.friends.title": "Se Faire des Amis",
+                "hobbies.friends.desc": "Construire des connexions significatives et favoriser la communauté",
+                "hobbies.reading.title": "Lecture",
+                "hobbies.reading.desc": "Explorer de nouvelles idées et élargir les connaissances",
+                "hobbies.faith.title": "Foi & Spiritualité",
+                "hobbies.faith.desc": "Grandir dans la foi et servir la communauté",
+                "contact.title": "Contactez-moi",
+                "contact.email": "Email",
+                "contact.phone": "Téléphone",
+                "contact.location": "Localisation",
+                "contact.location.value": "Kabwe, New NKRUMAH, Zambie",
+                "contact.qr": "Scannez pour sauvegarder le contact",
+                "contact.vcard": "Partager la Carte de Visite",
+                "contact.form.name": "Nom",
+                "contact.form.email": "Email",
+                "contact.form.message": "Message",
+                "contact.form.send": "Envoyer le Message",
+                "contact.form.success": "Merci pour votre message ! Je vous répondrai bientôt.",
+                "newsletter.title": "Abonnez-vous à ma newsletter",
+                "newsletter.placeholder": "Votre email",
+                "newsletter.subscribe": "S'abonner",
+                "newsletter.success": "Merci de vous abonner à ma newsletter !",
+                "hero.resume.message": "Le téléchargement du CV commencerait ici. Veuillez lier à un fichier de CV réel.",
+                "footer.copyright": "&copy; 2025 Blessings Chuulu. Tous droits réservés.",
+                "footer.made": "Fait avec <i class=\"fas fa-heart heart-icon\"></i> et beaucoup de café"
+            },
+            es: {
+                "nav.home": "Inicio",
+                "nav.about": "Acerca de",
+                "nav.journey": "Trayectoria",
+                "nav.skills": "Habilidades",
+                "nav.projects": "Proyectos",
+                "nav.blog": "Blog",
+                "nav.testimonials": "Testimonios",
+                "nav.certifications": "Certificaciones",
+                "nav.hobbies": "Pasatiempos",
+                "nav.contact": "Contacto",
+                "search.placeholder": "Buscar...",
+                "hero.subtitle": "Apasionada por crear soluciones de red seguras y eficientes",
+                "hero.contact": "Contáctame",
+                "hero.projects": "Ver Proyectos",
+                "hero.resume": "Descargar CV",
+                "about.title": "Acerca de mí",
+                "about.education": "Universidad de Zambia, 2025",
+                "about.location": "Kabwe, New NKRUMAH, Zambia",
+                "about.profession": "Ingeniera de Redes Informáticas",
+                "about.family": "Hija Mayor",
+                "timeline.title": "Mi Trayectoria",
+                "timeline.item1": "Graduada de la Universidad de Zambia con una licenciatura en Ciencias de la Computación",
+                "timeline.item2": "Completadas certificaciones Cisco CCNA y Google Cloud",
+                "timeline.item3": "Pasantía en Zambia Railways Limited gestionando infraestructura TI crítica",
+                "timeline.item4": "Comencé a especializarme en Ingeniería de Redes Informáticas",
+                "timeline.item5": "Comencé la licenciatura en Ciencias de la Computación en la Universidad de Zambia",
+                "skills.title": "Habilidades Técnicas",
+                "skills.networking": "Ingeniería de Redes",
+                "skills.cybersecurity": "Ciberseguridad",
+                "projects.title": "Proyectos Destacados",
+                "projects.filter.all": "Todos",
+                "projects.filter.networking": "Redes",
+                "projects.filter.web": "Desarrollo Web",
+                "projects.filter.security": "Seguridad",
+                "projects.live": "Demo en Vivo",
+                "projects.exam.title": "Sistema de Seguridad de Exámenes",
+                "projects.exam.description": "Un sistema integral de seguridad de exámenes diseñado para prevenir el fraude y garantizar la integridad académica. Incluye autenticación biométrica, monitoreo en tiempo real y entrega encriptada de preguntas.",
+                "projects.exam.thesis": "Proyecto de Tesis de Final de Carrera",
+                "projects.cluster.title": "Sistema de Computación en Clúster",
+                "projects.cluster.description": "Construí un clúster de computación de alto rendimiento usando dispositivos Raspberry Pi para demostrar principios de computación distribuida y capacidades de procesamiento paralelo.",
+                "projects.cluster.research": "Proyecto de Investigación",
+                "projects.monitoring.title": "Herramienta de Monitoreo de Red",
+                "projects.monitoring.description": "Desarrollé una aplicación de monitoreo de red en tiempo real que rastrea el uso de ancho de banda, detecta anomalías y proporciona análisis detallados para la optimización de red.",
+                "projects.monitoring.course": "Proyecto de Curso",
+                "blog.title": "Blog & Artículos",
+                "blog.category1": "Seguridad de Red",
+                "blog.category2": "Cloud Computing",
+                "blog.category3": "Desarrollo Profesional",
+                "blog.readmore": "Leer Más",
+                "blog.post1.title": "Asegurando la Infraestructura de Red en Instituciones Educativas",
+                "blog.post1.excerpt": "Explorando las mejores prácticas para implementar medidas de seguridad robustas en redes universitarias para proteger datos sensibles y garantizar la integridad académica...",
+                "blog.post2.title": "Construyendo Redes Escalables con Tecnologías Cloud",
+                "blog.post2.excerpt": "Una guía completa para diseñar e implementar soluciones de red basadas en la nube que puedan escalar con el crecimiento de tu organización...",
+                "blog.post3.title": "De Estudiante a Ingeniera de Redes: Mi Trayectoria",
+                "blog.post3.excerpt": "Compartiendo mi experiencia de transición de los estudios universitarios a la ingeniería de red profesional, incluyendo desafíos y lecciones aprendidas...",
+                "testimonials.title": "Testimonios",
+                "testimonials.quote1": "\"El sistema de seguridad de exámenes de Blessings fue innovador e impresionante técnicamente. Su atención al detalle y habilidades para resolver problemas son excepcionales. Tiene un futuro brillante en la ingeniería de red.\"",
+                "testimonials.prof1": "Profesor, Universidad de Zambia",
+                "testimonials.quote2": "\"Trabajar con Blessings en el proyecto de computación en clúster fue un placer. Ella aporta creatividad y experiencia técnica a cada desafío. Su dedicación a la excelencia es inspiradora.\"",
+                "testimonials.colleague1": "Compañera de Proyecto, UNZA",
+                "testimonials.quote3": "\"Blessings demostró un liderazgo sobresaliente durante nuestros talleres de seguridad de red. Su capacidad para explicar conceptos complejos simplemente y su pasión por el tema la convirtieron en una excelente mentora.\"",
+                "testimonials.mentor1": "Instructor de Cisco",
+                "certifications.title": "Certificaciones & Logros",
+                "certifications.cisco": "Cisco Networking Academy",
+                "certifications.completed": "Completado: 2024",
+                "certifications.completed2023": "Completado: 2023",
+                "certifications.google.title": "Ingeniero Asociado de Google Cloud",
+                "certifications.google.provider": "Google Cloud Platform",
+                "certifications.cyber.title": "Fundamentos de Ciberseguridad de Cisco",
+                "certifications.it.title": "Soporte IT Profesional de Google",
+                "certifications.it.provider": "Google Career Certificates",
+                "certifications.python.title": "Python para Ciencia de Datos",
+                "certifications.best.title": "Mejor Proyecto de Final de Carrera",
+                "certifications.best.provider": "Universidad de Zambia",
+                "certifications.awarded": "Otorgado: 2025",
+                "hobbies.title": "Pasatiempos & Intereses",
+                "hobbies.music.title": "Música Gospel",
+                "hobbies.music.desc": "Encontrando inspiración y paz a través de melodías gospel edificantes",
+                "hobbies.friends.title": "Haciendo Amigos",
+                "hobbies.friends.desc": "Construyendo conexiones significativas y fomentando la comunidad",
+                "hobbies.reading.title": "Lectura",
+                "hobbies.reading.desc": "Explorando nuevas ideas y expandiendo conocimientos",
+                "hobbies.faith.title": "Fe & Espiritualidad",
+                "hobbies.faith.desc": "Creciendo en la fe y sirviendo a la comunidad",
+                "contact.title": "Contáctame",
+                "contact.email": "Email",
+                "contact.phone": "Teléfono",
+                "contact.location": "Ubicación",
+                "contact.location.value": "Kabwe, New NKRUMAH, Zambia",
+                "contact.qr": "Escanea para guardar contacto",
+                "contact.vcard": "Compartir Tarjeta de Presentación",
+                "contact.form.name": "Nombre",
+                "contact.form.email": "Email",
+                "contact.form.message": "Mensaje",
+                "contact.form.send": "Enviar Mensaje",
+                "contact.form.success": "¡Gracias por tu mensaje! Te responderé pronto.",
+                "newsletter.title": "Suscríbete a mi newsletter",
+                "newsletter.placeholder": "Tu email",
+                "newsletter.subscribe": "Suscribirse",
+                "newsletter.success": "¡Gracias por suscribirte a mi newsletter!",
+                "hero.resume.message": "La descarga del CV comenzaría aquí. Por favor, enlaza a un archivo de CV real.",
+                "footer.copyright": "&copy; 2025 Blessings Chuulu. Todos los derechos reservados.",
+                "footer.made": "Hecho con <i class=\"fas fa-heart heart-icon\"></i> y mucho café"
+            }
+        };
+
+        // Language Manager - Fixed Version
+        class LanguageManager {
+            constructor() {
+                this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
+                this.translations = translations;
+                this.isInitialized = false;
+            }
+
+            init() {
+                // Wait for DOM to be ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        this.setupLanguage();
+                    });
+                } else {
+                    this.setupLanguage();
+                }
+            }
+
+            setupLanguage() {
+                this.setLanguage(this.currentLang);
+                this.bindEvents();
+                this.isInitialized = true;
+            }
+
+            bindEvents() {
+                const languageSelect = document.getElementById('languageSelect');
+                if (languageSelect) {
+                    languageSelect.value = this.currentLang;
+                    languageSelect.addEventListener('change', (e) => {
+                        this.setLanguage(e.target.value);
+                    });
+                }
+            }
+
+            setLanguage(lang) {
+                if (!this.translations[lang]) {
+                    console.warn(`Language ${lang} not found`);
+                    return;
+                }
+
+                this.currentLang = lang;
+                localStorage.setItem('selectedLanguage', lang);
+
+                // Update HTML lang attribute
+                document.documentElement.lang = lang;
+
+                // Update language selector
+                const languageSelect = document.getElementById('languageSelect');
+                if (languageSelect) {
+                    languageSelect.value = lang;
+                }
+
+                // Update all translatable elements
+                this.updateTranslations();
+
+                // Update typing animation texts
+                this.updateTypingTexts();
+
+                // Show notification
+                this.showLanguageChangeNotification();
+            }
+
+            updateTranslations() {
+                // Get all elements with data-i18n attribute
+                const elements = document.querySelectorAll('[data-i18n]');
+
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    const translation = this.getTranslation(key);
+
+                    if (translation) {
+                        // Handle different element types
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            // For input elements, update placeholder if it has the attribute
+                            if (element.hasAttribute('data-i18n-placeholder')) {
+                                element.placeholder = translation;
+                            }
+                        } else if (element.tagName === 'OPTION') {
+                            // For option elements, update text content
+                            element.textContent = translation;
+                        } else {
+                            // For all other elements, update innerHTML
+                            element.innerHTML = translation;
+                        }
+                    } else {
+                        console.warn(`Translation not found for key: ${key}`);
+                    }
+                });
+
+                // Also update elements with data-i18n-placeholder attribute
+                const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+                placeholderElements.forEach(element => {
+                    const key = element.getAttribute('data-i18n-placeholder');
+                    const translation = this.getTranslation(key);
+                    if (translation) {
+                        element.placeholder = translation;
+                    }
+                });
+            }
+
+            getTranslation(key) {
+                const keys = key.split('.');
+                let translation = this.translations[this.currentLang];
+
+                for (const k of keys) {
+                    if (translation && translation[k]) {
+                        translation = translation[k];
+                    } else {
+                        return null;
+                    }
+                }
+
+                return translation;
+            }
+
+            updateTypingTexts() {
+                const typingTexts = {
+                    en: [
+                        "Computer Networks Engineer",
+                        "Full Stack Developer",
+                        "Tech Innovator",
+                        "Problem Solver"
+                    ],
+                    fr: [
+                        "Ingénieure Réseaux Informatiques",
+                        "Développeuse Full Stack",
+                        "Innovatrice Technologique",
+                        "Résolveuse de Problèmes"
+                    ],
+                    es: [
+                        "Ingeniera de Redes Informáticas",
+                        "Desarrolladora Full Stack",
+                        "Innovadora Tecnológica",
+                        "Resuelve Problemas"
+                    ]
+                };
+
+                // Store the new texts for the typing animation
+                window.typingTexts = typingTexts[this.currentLang] || typingTexts.en;
+            }
+
+            showLanguageChangeNotification() {
+                const notification = document.getElementById('langNotification');
+                if (!notification) return;
+
+                const langNames = {
+                    'en': 'English',
+                    'fr': 'Français',
+                    'es': 'Español'
+                };
+
+                notification.textContent = `Language changed to ${langNames[this.currentLang]}`;
+                notification.classList.add('show');
+
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        // Initialize language manager
+        const languageManager = new LanguageManager();
+
+        // Wait for DOM to be ready before initializing everything
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize language manager
+            languageManager.init();
+
+            // Hide loading screen when page is fully loaded
+            window.addEventListener('load', () => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('hidden');
+                }
+            });
+
+            // Safe references
+            const body = document.body;
+
+            // Theme Toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    if (body.getAttribute('data-theme') === 'dark') {
+                        body.removeAttribute('data-theme');
+                        if (icon) {
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        }
+                        try { localStorage.setItem('theme', 'light'); } catch (e) { /* ignore */ }
+                    } else {
+                        body.setAttribute('data-theme', 'dark');
+                        if (icon) {
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        }
+                        try { localStorage.setItem('theme', 'dark'); } catch (e) { /* ignore */ }
+                    }
+                });
+            }
+
+            // Load saved theme
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    body.setAttribute('data-theme', 'dark');
+                    if (icon) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    }
+                }
+            } catch (e) {
+                // localStorage might be unavailable in some contexts
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+
+            // Typing Animation
+            function typeWriter(text, element, speed = 100) {
+                let i = 0;
+                element.innerHTML = '';
+
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+
+                type();
+            }
+
+            // Initialize typing animation
+            const typingElement = document.getElementById('typingText');
+            if (typingElement) {
+                let textIndex = 0;
+
+                function typeNextText() {
+                    const texts = window.typingTexts || [
+                        "Computer Networks Engineer",
+                        "Full Stack Developer",
+                        "Tech Innovator",
+                        "Problem Solver"
+                    ];
+
+                    typeWriter(texts[textIndex], typingElement);
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+
+                typeNextText();
+                setInterval(typeNextText, 5000);
+            }
+
+            // Scroll Progress Indicator
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+
+                const progressBar = document.getElementById('progressBar');
+                if (progressBar) {
+                    progressBar.style.width = scrolled + '%';
+                }
+            });
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                const href = anchor.getAttribute('href');
+                if (!href || href === '#') return;
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const id = href.slice(1);
+                    const target = document.getElementById(id);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Project Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            if (filterBtns.length > 0 && projectCards.length > 0) {
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Update active button
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Filter projects
+                        const filter = btn.getAttribute('data-filter');
+
+                        projectCards.forEach(card => {
+                            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Search Functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+
+            function performSearch() {
+                if (!searchInput) return;
+
+                const searchTerm = searchInput.value.toLowerCase();
+
+                // Simple search implementation
+                const sections = document.querySelectorAll('section');
+
+                sections.forEach(section => {
+                    const text = section.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        section.style.display = 'block';
+                        if (searchTerm.length > 2) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                // If search is empty, show all sections
+                if (searchTerm === '') {
+                    sections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                }
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', performSearch);
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+
+            // Accessibility Options
+            const accessibilityToggle = document.getElementById('accessibilityToggle');
+            if (accessibilityToggle) {
+                accessibilityToggle.addEventListener('click', () => {
+                    // Toggle high contrast mode
+                    document.body.classList.toggle('high-contrast');
+
+                    // Toggle larger text
+                    document.body.classList.toggle('large-text');
+
+                    alert('Accessibility options toggled. High contrast and large text modes activated.');
+                });
+            }
+
+            // Form Submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    try {
+                        const successMessage = languageManager.getTranslation('contact.form.success') || 'Thank you for your message! I will get back to you soon.';
+                        alert(successMessage);
+                    } catch (err) {
+                        console.log('Form submitted');
+                    }
+                    if (e.target && typeof e.target.reset === 'function') e.target.reset();
+                });
+            }
+
+            // Newsletter Form
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const successMessage = languageManager.getTranslation('newsletter.success') || 'Thank you for subscribing to my newsletter!';
+                    alert(successMessage);
+                    e.target.reset();
+                });
+            }
+
+            // Download Resume
+            const downloadResumeBtn = document.getElementById('downloadResume');
+            if (downloadResumeBtn) {
+                downloadResumeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const message = languageManager.getTranslation('hero.resume.message') || 'Resume download would start here. Please link to an actual resume file.';
+                    alert(message);
+                });
+            }
+
+            // Share Virtual Business Card - Fixed with fallback
+            const shareVCardBtn = document.getElementById('shareVCard');
+            if (shareVCardBtn) {
+                shareVCardBtn.addEventListener('click', () => {
+                    const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Blessings Chuulu
+TEL:+260123456789
+EMAIL:blessings.chuulu@example.com
+END:VCARD`;
+
+                    try {
+                        const blob = new Blob([vCardData], { type: 'text/vcard' });
+                        const url = URL.createObjectURL(blob);
+
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'Blessings_Chuulu.vcf';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+
+                        URL.revokeObjectURL(url);
+                    } catch (error) {
+                        console.error('Error sharing vCard:', error);
+                        alert('Unable to share business card. Please try again.');
+                    }
+                });
+            }
+
+            // 3D Animation Background
+            const canvas = document.getElementById('canvas3d');
+            let ctx = null;
+            if (canvas && canvas.getContext) {
+                ctx = canvas.getContext('2d');
+            }
+
+            if (canvas && ctx) {
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+
+                resizeCanvas();
+
+                window.addEventListener('resize', resizeCanvas);
+
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.size = Math.random() * 3 + 1;
+                        this.speedX = Math.random() * 3 - 1.5;
+                        this.speedY = Math.random() * 3 - 1.5;
+                        this.color = `hsla(${Math.random() * 60 + 200}, 70%, 50%, 0.8)`;
+                    }
+
+                    update() {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+
+                        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+                    }
+
+                    draw() {
+                        ctx.fillStyle = this.color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                const particles = [];
+                for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+                function animateParticles() {
+                    if (!ctx) return;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    particles.forEach(particle => { particle.update(); particle.draw(); });
+
+                    // Draw connections
+                    for (let i = 0; i < particles.length; i++) {
+                        const p1 = particles[i];
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const p2 = particles[j];
+                            const dx = p2.x - p1.x;
+                            const dy = p2.y - p1.y;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+                            if (distance < 100) {
+                                ctx.strokeStyle = `rgba(74,107,255,${0.2 * (1 - distance / 100)})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.beginPath();
+                                ctx.moveTo(p1.x, p1.y);
+                                ctx.lineTo(p2.x, p2.y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+
+                    requestAnimationFrame(animateParticles);
+                }
+
+                requestAnimationFrame(animateParticles);
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.style.animation = 'fadeInUp 1s ease both';
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+                // Skill bars animation
+                const skillBars = document.querySelectorAll('.skill-progress');
+                const skillObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const width = entry.target.getAttribute('data-width') || entry.target.style.width || '0%';
+                            entry.target.style.width = '0';
+                            setTimeout(() => { entry.target.style.width = width; }, 100);
+                        }
+                    });
+                }, observerOptions);
+
+                skillBars.forEach(bar => {
+                    if (!bar.getAttribute('data-width')) bar.setAttribute('data-width', bar.style.width || '0%');
+                    skillObserver.observe(bar);
+                });
+            } else {
+                // Fallback: ensure skill bars show
+                document.querySelectorAll('.skill-progress').forEach(bar => { bar.style.width = bar.style.width || '0%'; });
+            }
+        });
+    </script>
+</body>
+
+</html>
