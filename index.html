@@ -17,7 +17,7 @@
     <meta property="og:title" content="Blessings Chuulu - Computer Networks Engineer">
     <meta property="og:description"
         content="Passionate Computer Networks Engineer & Full Stack Developer from Kabwe, Zambia. Recent graduate from University of Zambia specializing in Computer Networks Engineering.">
-    <meta property="og:image" content="https://picsum.photos/seed/blessings-og/1200x630.jpg">
+    <meta property="og:image" content="https://picsum.photos/seed/blessings-og/1200/630.jpg">
     <meta property="og:url" content="https://blessingschuulu.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Blessings Chuulu Portfolio">
@@ -28,16 +28,16 @@
     <meta name="twitter:title" content="Blessings Chuulu - Computer Networks Engineer">
     <meta name="twitter:description"
         content="Passionate Computer Networks Engineer & Full Stack Developer from Kabwe, Zambia. Recent graduate from University of Zambia specializing in Computer Networks Engineering.">
-    <meta name="twitter:image" content="https://picsum.photos/seed/blessings-twitter/1200x630.jpg">
+    <meta name="twitter:image" content="https://picsum.photos/seed/blessings-twitter/1200/630.jpg">
     <meta name="twitter:site" content="@blessingschuulu">
     <meta name="twitter:creator" content="@blessingschuulu">
 
     <!-- Favicon and App Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://picsum.photos/seed/favicon/180x180.jpg">
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="https://picsum.photos/seed/favicon/32x32.jpg">
-    <link rel="icon" type="image/jpeg" sizes="16x16" href="https://picsum.photos/seed/favicon/16x16.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://picsum.photos/seed/favicon/180/180.jpg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="https://picsum.photos/seed/favicon/32/32.jpg">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="https://picsum.photos/seed/favicon/16/16.jpg">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="https://picsum.photos/seed/safari-pinned-tab/16x16.jpg" color="#4a6bff">
+    <link rel="mask-icon" href="https://picsum.photos/seed/safari-pinned-tab/16/16.jpg" color="#4a6bff">
     <meta name="msapplication-TileColor" content="#4a6bff">
     <meta name="theme-color" content="#4a6bff">
 
@@ -344,6 +344,65 @@
             border: none;
             color: var(--text-color);
             font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile Dropdown Menu */
+        .mobile-dropdown {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg-color);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 0.4s ease;
+            padding: 2rem;
+        }
+
+        .mobile-dropdown.active {
+            transform: translateY(0);
+        }
+
+        .mobile-dropdown-links {
+            list-style: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        .mobile-dropdown-links li {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-dropdown-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-dropdown-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(10px);
+        }
+
+        .mobile-dropdown-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 2rem;
             cursor: pointer;
         }
 
@@ -1342,6 +1401,24 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                gap: 2rem;
+            }
+            
+            .contact-container {
+                gap: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1355,21 +1432,26 @@
                 gap: 0.5rem;
             }
 
-            .search-container input {
-                width: 100px;
+            .search-container {
+                display: none;
             }
 
-            .search-container input:focus {
-                width: 120px;
+            .language-selector {
+                display: none;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
             .hero-text h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
             }
 
             .about-content {
@@ -1438,6 +1520,72 @@
 
             .newsletter button {
                 border-radius: 5px;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hobbies-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .project-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .hobbies-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 3rem 5%;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
 
@@ -1530,6 +1678,25 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown" id="mobileDropdown">
+        <button class="mobile-dropdown-close" id="mobileDropdownClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-dropdown-links">
+            <li><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#timeline" data-i18n="nav.journey">Journey</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+            <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+            <li><a href="#hobbies" data-i18n="nav.hobbies">Hobbies</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- 3D Animation Background -->
     <canvas id="canvas3d"></canvas>
@@ -2571,6 +2738,40 @@
             // Initialize language manager
             languageManager.init();
 
+            // Mobile Dropdown Menu Functionality
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            const mobileDropdownClose = document.getElementById('mobileDropdownClose');
+            const mobileDropdownLinks = document.querySelectorAll('.mobile-dropdown-links a');
+
+            if (mobileMenuToggle && mobileDropdown) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileDropdown.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                });
+
+                mobileDropdownClose.addEventListener('click', () => {
+                    mobileDropdown.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                });
+
+                // Close menu when clicking on a link
+                mobileDropdownLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileDropdown.classList.remove('active');
+                        document.body.style.overflow = ''; // Restore scrolling
+                    });
+                });
+
+                // Close menu when clicking outside
+                mobileDropdown.addEventListener('click', (e) => {
+                    if (e.target === mobileDropdown) {
+                        mobileDropdown.classList.remove('active');
+                        document.body.style.overflow = ''; // Restore scrolling
+                    }
+                });
+            }
+
             // Hide loading screen when page is fully loaded
             window.addEventListener('load', () => {
                 const loadingScreen = document.getElementById('loadingScreen');
@@ -2618,16 +2819,6 @@
                 }
             } catch (e) {
                 // localStorage might be unavailable in some contexts
-            }
-
-            // Mobile Menu Toggle
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            if (mobileMenuToggle && navLinks) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                });
             }
 
             // Typing Animation

@@ -86,7 +86,7 @@ Language preferences are saved in localStorage for persistent user experience.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/blessingschuulu/portfolio.git
+   git remote add origin https://github.com/Godfrey-cyber23/blessings-portfolio-website.git
 
 **Starting the development Project**
 Make Sure you have Apache server correctly install and configured and python,
